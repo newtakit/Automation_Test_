@@ -1,0 +1,12 @@
+test_cases:
+  - Test Case ID: 1
+    Description: Test Page Load
+    Steps: Open URL
+    Expected Result: Page loads correctly
+    URL: https://demoqa.com
+
+  - Test Case ID: 2
+    Description: Test Button Click
+    Steps: Click on button
+    Expected Result: Button clicked successfully
+    Element ID: non_existent_button
