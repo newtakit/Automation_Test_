@@ -1,0 +1,56 @@
+Test_cases:
+  - Test Case ID: 1
+    Test Scenario: Valid Login
+    Date: 30/7/2024
+    Steps:
+      - เปิดเว็บ https://www.saucedemo.com/
+      - กรอก Username: standard_user
+      - กรอก Password: secret_sauce
+      - กดปุ่ม Login
+    Expected Result:
+      - สามารถเข้าสู่หน้าถัดไปได้
+    Actual Result:
+      - สามารถเข้าสู่หน้าถัดไปได้
+    Status: Pass
+
+  - Test Case ID: 2
+    Test Scenario: InValid Login (Empty Fields)
+    Date: 30/7/2024
+    Steps:
+      - ไม่กรอกข้อมูลในฟิลด์ Username และ Password
+      - กดปุ่ม Login
+    Expected Result:
+      - ไม่สามารถเข้าสู่หน้าเว็บถัดไปได้
+      - ขึ้นข้อความแจ้งเตือน: "Epic sadface: Username is required"
+    Actual Result:
+      - ไม่สามารถเข้าสู่หน้าถัดไปได้
+      - ขึ้นข้อความแจ้งเตือน
+    Status: Pass
+
+  - Test Case ID: 3
+    Test Scenario: InValid Login (Wrong Username)
+    Date: 30/7/2024
+    Steps:
+      - กรอก Username: wrong_user
+      - กรอก Password: secret_sauce
+      - กดปุ่ม Login
+    Expected Result:
+      - ระบบแสดงข้อความ "Epic sadface: Username and password do not match"
+    Actual Result:
+      - ไม่สามารถเข้าสู่หน้าถัดไปได้
+      - ขึ้นข้อความแจ้งเตือน
+    Status: Pass
+
+  - Test Case ID: 4
+    Test Scenario: InValid Login (Wrong Password)
+    Date: 30/7/2024
+    Steps:
+      - กรอก Username: standard_user
+      - กรอก Password: wrong_user
+      - กดปุ่ม Login
+    Expected Result:
+      - ระบบแสดงข้อความ "Epic sadface: Username and password do not match"
+    Actual Result:
+      - ไม่สามารถเข้าสู่หน้าถัดไปได้
+      - ขึ้นข้อความแจ้งเตือน
+    Status: Pass
