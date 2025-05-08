@@ -62,7 +62,7 @@ Library ที่ต้องลงเพิ่ม
 
 ![flow](image/2.png)
 
-``` 
+```python
     import logging
     from selenium import webdriver
     from selenium.webdriver.common.by import By
@@ -79,7 +79,7 @@ Library ที่ต้องลงเพิ่ม
 🔹 ตั้งค่าการบันทึก log เพื่อเก็บผลลัพธ์ในไฟล์ test_log.txt พร้อมแสดงเวลาและระดับข้อความ
 🔹 บันทึก "Login test" เพื่อระบุว่าเริ่มต้นการทดสอบ
 
-```
+```python
  logging.basicConfig(filename="test_log.txt", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
  logging.info("Login test started")
 
@@ -88,7 +88,7 @@ Library ที่ต้องลงเพิ่ม
 🔹 เปิด Chrome WebDriver
 🔹 ไปที่ SauceDemo เพื่อเตรียมทดสอบ Logi
 
-```
+```python
  driver = webdriver.Chrome()
  driver.get("https://www.saucedemo.com/")
 
@@ -97,7 +97,7 @@ Library ที่ต้องลงเพิ่ม
 3. รอให้ element ปรากฏ
 🔹 ใช้ WebDriverWait เพื่อรอให้ Username และ Password ปรากฏก่อนดำเนินการ
 
-```
+```python
     username = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.NAME, "user-name"))
     )
@@ -113,7 +113,7 @@ Library ที่ต้องลงเพิ่ม
 🔹 กรอกข้อมูล Username & Password
 🔹 ค้นหา ปุ่ม Login และคลิกเพื่อลองเข้าสู่ระบบ
 
-```
+```python
     username.send_keys("standard_user")
     password.send_keys("secret_sauce")
     login_button = driver.find_element(By.ID, "login-button")
@@ -125,7 +125,7 @@ Library ที่ต้องลงเพิ่ม
 5. ตรวจสอบว่าการ Login สำเร็จ
 🔹 บันทึก "passed" หากสำเร็จ หรือ "failed" หากไม่ผ่าน
 
-```
+```python
     if "inventory.html" in driver.current_url:
         logging.info("passed")
     else:
@@ -137,7 +137,7 @@ Library ที่ต้องลงเพิ่ม
 6. จัดการข้อผิดพลาด
 🔹 หากเกิดข้อผิดพลาด บันทึกข้อความ Error เพื่อช่วยวิเคราะห์ปัญหา
 
-```
+```python
     except Exception as e:
         logging.error(f"Test encountered an error: {str(e)}")
 
@@ -148,7 +148,7 @@ Library ที่ต้องลงเพิ่ม
 7. ปิดเว็บเบราว์เซอร์
 🔹 ปิด WebDriver หลังจากทดสอบเสร็จ
 
-```
+```python
     finally:
         driver.quit()
 
@@ -158,7 +158,7 @@ Library ที่ต้องลงเพิ่ม
 
 # หากทำหลาย case พร้อมกันก็ใช้การ วน loop เอา
 
-```
+```python
     logging.basicConfig(filename="test_log.txt", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
     logging.info("Login test started")
 
